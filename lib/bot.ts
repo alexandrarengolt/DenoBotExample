@@ -16,7 +16,7 @@ bot.command(
 // Обработайте другие сообщения.
 bot.on("message", (ctx) => ctx.reply("Получил ваше сообщение: " + ctx.message.text + " !",));
 
-// Клавиатура будет отправлять в бота команду /about
+// Клавиатура будет отправлять в бота команду /register
 const keyboard = new InlineKeyboard()
     .text("Обо мне", "/about");
 
@@ -49,7 +49,11 @@ bot.callbackQuery("/registr", async (ctx) => {
  
 "Если вы согласны с правилами, то нажмите кнопку"+ "Я принимаю"+".");
 });
-
+// Клавиатура будет отправлять в бота команду /agree
+const keyboard = new InlineKeyboard()
+    .text("Я принимаю", "/agree");
+bot.callbackQuery("/registr", async (ctx) => {
+    await ctx.answerCallbackQuery(); // Уведомляем Telegram, что мы обработали запрос
 // Теперь, когда вы указали, как обрабатывать сообщения, вы можете запустить своего бота.
 // Он подключится к серверам Telegram и будет ждать сообщений.
 // Запуск бота производится из файла main.ts
