@@ -53,8 +53,6 @@ bot.callbackQuery("/registr", async (ctx) => {
 // Клавиатура будет отправлять в бота команду /agree
 const keyboard2 = new InlineKeyboard()
     .text("Я принимаю", "/agree");
-bot.callbackQuery("/registr", async (ctx) => {
-    await ctx.answerCallbackQuery();} // Уведомляем Telegram, что мы обработали запрос
 // Теперь, когда вы указали, как обрабатывать сообщения, вы можете запустить своего бота.
 // Он подключится к серверам Telegram и будет ждать сообщений.
 // Запуск бота производится из файла main.ts
