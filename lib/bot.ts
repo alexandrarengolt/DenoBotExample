@@ -19,6 +19,7 @@ bot.on("message", (ctx) => ctx.reply("Получил ваше сообщение
 // Клавиатура будет отправлять в бота команду /about
 const keyboard = new InlineKeyboard()
     .text("Обо мне", "/about");
+    
 
 bot.callbackQuery("/about", async (ctx) => {
     await ctx.answerCallbackQuery(); // Уведомляем Telegram, что мы обработали запрос
@@ -26,7 +27,7 @@ bot.callbackQuery("/about", async (ctx) => {
     "• Искать людей по вашим интересам;\n" +
     "• Помогать организовывать встречи в различных кофейнях города;\n" +
     "• Поддерживать вас в поиске новых друзей или единомышленников.\n\n" +
-    "Просто напишите мне, и я помогу вам найти интересных людей и организовать встречу!");
+    "Просто напишите мне, и я помогу вам найти интересных людей и организовать встречу!",{reply_markup: keyboard1}));
 });
 const keyboard1 = new InlineKeyboard()
     .text("Зарегистрироваться", "/register");
