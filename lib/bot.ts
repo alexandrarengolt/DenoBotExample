@@ -30,15 +30,8 @@ bot.callbackQuery("/about", async (ctx) => {
 });
 const keyboard1 = new InlineKeyboard()
     .text("Зарегистрироваться", "/register");
-// Отправьте встроенную клавиатуру с сообщением.
-await ctx.reply(text, {"помогите"
-  reply_markup: inlineKeyboard,
-});
-// Клавиатура будет отправлять в бота команду /register
-//const keyboard1 = new InlineKeyboard()
-    //.text("Зарегистрироваться", "/register");
 
-bot.callbackQuery("/registr", async (ctx) => {
+bot.callbackQuery("/register", async (ctx) => {
     await ctx.answerCallbackQuery(); // Уведомляем Telegram, что мы обработали запрос
     await ctx.reply("Для начала процесса регистрации, пожалуйста, ознакомьтесь с правилами общения и использования нашего бота:\n" + 
   
