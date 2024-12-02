@@ -28,10 +28,15 @@ bot.callbackQuery("/about", async (ctx) => {
     "• Поддерживать вас в поиске новых друзей или единомышленников.\n\n" +
     "Просто напишите мне, и я помогу вам найти интересных людей и организовать встречу!");
 });
-
-// Клавиатура будет отправлять в бота команду /register
 const keyboard1 = new InlineKeyboard()
     .text("Зарегистрироваться", "/register");
+// Отправьте встроенную клавиатуру с сообщением.
+await ctx.reply(text, {"помогите"
+  reply_markup: inlineKeyboard,
+});
+// Клавиатура будет отправлять в бота команду /register
+//const keyboard1 = new InlineKeyboard()
+    //.text("Зарегистрироваться", "/register");
 
 bot.callbackQuery("/registr", async (ctx) => {
     await ctx.answerCallbackQuery(); // Уведомляем Telegram, что мы обработали запрос
