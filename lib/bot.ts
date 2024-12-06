@@ -17,9 +17,9 @@ bot.command(
 bot.on("message", (ctx) => ctx.reply("Получил ваше сообщение: " + ctx.message.text + " !",));
 
 // Клавиатура будет отправлять в бота команду /about
-const keyboard = new InlineKeyboard()
+const keyboard = new Inlinekeyboard()
     .text("Обо мне", "/about");
-const keyboard1 = new InlineKeyboard()
+//const keyboard1 = new InlineKeyboard()
     .text("Зарегистрироваться", "/register");   
 
 bot.callbackQuery("/about", async (ctx) => {
@@ -31,7 +31,7 @@ bot.callbackQuery("/about", async (ctx) => {
     "Просто напишите мне, и я помогу вам найти интересных людей и организовать встречу!",{ reply_markup: keyboard1 });
 });
 
-bot.callbackQuery("/register", async (ctx) => {
+/*bot.callbackQuery("/register", async (ctx) => {
     await ctx.answerCallbackQuery(); // Уведомляем Telegram, что мы обработали запрос
     await ctx.reply("Для начала процесса регистрации, пожалуйста, ознакомьтесь с правилами общения и использования нашего бота:\n" + 
   
