@@ -3,10 +3,10 @@ export interface UserInfo {
   name: string;
   age: number;
   interests: string[];
-  geo: Record<string, number>;
+  lat: number;
+  long: number;
   time: string;
   state: string;
   rating: number;
   done: boolean;
 }
-
