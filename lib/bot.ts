@@ -1,5 +1,13 @@
-import { Bot, InlineKeyboard } from "https://deno.land/x/grammy@v1.32.0/mod.ts";
-
+import { Bot, Context} from "https://deno.land/x/grammy@v1.32.0/mod.ts";
+import { changesKeyboard, menuKeyboard, yesOrNo } from "./keyboards.ts"; // импорт клавиатур
+import { reviewProfile, setState } from "./functions.ts"; //импорт функций
+import { createClient } from "npm:@supabase/supabase-js"; // database
+import { UserInfo } from "./interfaces.ts";
+// инициализация supabase
+const supabaseUrl = "https://skabfydkbgdodqxttswh.supabase.co";
+const supabaseKey = Deno.env.get("SUPABASE_KEY") || "";
+const supabase = createClient(supabaseUrl, supabaseKey);
+export const users = supabase.from("users");
 // Создайте экземпляр класса `Bot` и передайте ему токен вашего бота.
 // Токен и адрес бэкенда мы спрячем, чтобы никто не смог воспользоваться нашим ботом или взломать нас. Получим их из файла .env (или из настроек в Deno Deploy)
 export const bot = new Bot(Deno.env.get("BOT_TOKEN") || "7556907097:AAFerRjuaou1JjXBVaRwp4b5sKq_EAo9vRM"); // export нужен, чтобы воспользоваться ботом в другом файле
