@@ -2,8 +2,8 @@ import { Bot, Context} from "https://deno.land/x/grammy@v1.32.0/mod.ts";
 import { createClient } from "npm:@supabase/supabase-js"; // database
 // инициализация supabase
 const supabaseUrl = "https://skabfydkbgdodqxttswh.supabase.co";
-const supabaseKey = Deno.env.get("SUPABASE_KEY") || "";
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabaseKey = Deno.env.get("SUPABASE_KEY") || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrYWJmeWRrYmdkb2RxeHR0c3doIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM2NTI1NTcsImV4cCI6MjA0OTIyODU1N30.3z11DEmN-Dmxcj5xBzOBMZagRJfodRPfbetGoxvJNMc";
+const supabase = createClient(supabaseUrl, supabaseKey );
 export const users = supabase.from("users");
 // Создайте экземпляр класса `Bot` и передайте ему токен вашего бота.
 // Токен и адрес бэкенда мы спрячем, чтобы никто не смог воспользоваться нашим ботом или взломать нас. Получим их из файла .env (или из настроек в Deno Deploy)
