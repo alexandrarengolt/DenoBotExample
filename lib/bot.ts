@@ -12,7 +12,7 @@ const supabase = createClient(supabaseUrl, supabaseKey );
 export const users = supabase.from("users");
 // Создайте экземпляр класса `Bot` и передайте ему токен вашего бота.
 // Токен и адрес бэкенда мы спрячем, чтобы никто не смог воспользоваться нашим ботом или взломать нас. Получим их из файла .env (или из настроек в Deno Deploy)
-export const bot = new Bot(Deno.env.get("BOT_TOKEN") || "8050336969:AAGkykRU9fhf1BU_ZbdUnYjkZONFHBkeuO8"); // export нужен, чтобы воспользоваться ботом в другом файле
+export const bot = new Bot(Deno.env.get("BOT_TOKEN") || "7556907097:AAFerRjuaou1JjXBVaRwp4b5sKq_EAo9vRM");
 
 export let info: UserInfo = {
   id: 0,
