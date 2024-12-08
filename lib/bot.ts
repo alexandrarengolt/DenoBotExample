@@ -1,7 +1,8 @@
 import { Bot, Context} from "https://deno.land/x/grammy@v1.32.0/mod.ts";
-import { changesKeyboard, menuKeyboard, yesOrNo } from "./keyboards.ts"; // импорт клавиатур
+
 import { reviewProfile, setState } from "./functions.ts"; //импорт функций
 import { createClient } from "npm:@supabase/supabase-js"; // database
+import { changesKeyboard, menuKeyboard, yesOrNo } from "./keyboards.ts"; // импорт клавиатур
 import { UserInfo } from "./interfaces.ts";
 // инициализация supabase
 const supabaseUrl = "https://skabfydkbgdodqxttswh.supabase.co";
