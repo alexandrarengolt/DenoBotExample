@@ -16,7 +16,7 @@ import { UserInfo } from "./interfaces.ts";
  
 // инициализация supabase 
 const supabaseUrl = "https://skabfydkbgdodqxttswh.supabase.co"; 
-const supabaseKey = Deno.env.get("SUPABASE_KEY") || ""; 
+const supabaseKey = Deno.env.get("SUPABASE_KEY") || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrYWJmeWRrYmdkb2RxeHR0c3doIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM2NTI1NTcsImV4cCI6MjA0OTIyODU1N30.3z11DEmN-Dmxcj5xBzOBMZagRJfodRPfbetGoxvJNMc"; 
 const supabase = createClient(supabaseUrl, supabaseKey); 
 await supabase.auth.signInAnonymously() 
 export const users = supabase.from("users"); 
